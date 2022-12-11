@@ -20,7 +20,6 @@ const createListGallery = galleryItems.map(elem =>
   </div>`
     ).join("")
 
-// console.log(createListGallery)
 
 const list = document.querySelector(".gallery");
 list.insertAdjacentHTML("beforeend", createListGallery)
@@ -28,17 +27,11 @@ list.insertAdjacentHTML("beforeend", createListGallery)
 list.addEventListener('click', onImageClick)
 
 function onImageClick(elem) {
-
   // console.log(elem.target.dataset.source)
   const instance = basicLightbox.create(`
   <img src="${elem.target.dataset.source}" width="800" height="600">
 `)
-console.log(elem.keyCode)
- instance.show()
- if(elem.keyCode === 27){
-  // console.log(elem.keyCode)
-  instance.close()
- }
+ instance.show() 
 }
 
 

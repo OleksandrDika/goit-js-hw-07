@@ -17,21 +17,14 @@ list.insertAdjacentHTML("beforeend", createListGallery)
 list.addEventListener('click', onImageClick)
 
 function onImageClick(elem) {
-
-  // let gallery = new SimpleLightbox('.gallery a');
-  // gallery.on('show.simplelightbox', function () {
-  //   console.log(elem.target.href)
-  // });
-
-  var lightbox = new SimpleLightbox('.gallery a', function (elem) {
-    console.log(elem.target.href)
-  });
-  
-
-
-  // $('.gallery a').on('open.simplelightbox', function (elem) {
-  //   console.log(elem.target.href)
-  // });
+ 
+  new SimpleLightbox('.gallery a', 
+{ 
+captions: true, 
+captionsData: "alt", 
+captionDelay: 250, 
+}
+);  
  
 }
 
