@@ -1,32 +1,23 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
 
 const createListGallery = galleryItems.map(elem => 
     `<a class="gallery__item" href="${elem.original}" data-caption="${elem.description}" onclick="return false;">
     <img class="gallery__image" src="${elem.preview}" alt="${elem.description}" />
-  </a>`
+    </a>`
     ).join("")
 
-// console.log(createListGallery)
 
 const list = document.querySelector(".gallery");
 list.insertAdjacentHTML("beforeend", createListGallery)
 
-list.addEventListener('click', onImageClick)
-
-function onImageClick(elem) {
- 
-  new SimpleLightbox('.gallery a', 
+new SimpleLightbox('.gallery a', 
 { 
 captions: true, 
 captionsData: "alt", 
 captionDelay: 250, 
 }
-);  
- 
-}
-
+); 
 
 
